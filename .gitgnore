@@ -1,0 +1,14 @@
+#lista de arquivos e pastas que não devem ser versionados pelo Git
+
+# Pasta gerada automaticamente pelo Hugo (o Netlify cria a dele)
+/public/
+
+# Arquivos temporários de processamento de imagens/CSS do Hugo
+/resources/
+
+# Arquivo de bloqueio criado quando o servidor local do Hugo roda
+.hugo_build.lock
+
+# Arquivos ocultos gerados pelo sistema operacional (Windows/Mac)
+.DS_Store
+Thumbs.db

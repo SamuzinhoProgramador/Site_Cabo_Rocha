@@ -1,0 +1,9 @@
+baseURL = "https://caborocha.org.br/" #substituir depois
+locale = "pt-br"
+title = "Cabo Rocha"
+
+[params]
+  description = "Cabo Rocha, ong em porto alegre."
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
