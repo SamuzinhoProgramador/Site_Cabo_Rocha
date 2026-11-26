@@ -1,127 +1,221 @@
-/* Barra de navegação */
+
+/* ========================================
+   CONFIGURAÇÕES GERAIS
+======================================== */
+
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+        'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    width: 100%;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+
+    background-color: #F6F2EA;
+    color: #2B2118;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /*stretch mas o firefox n gosta;  fah*/
+}
+
+
+/* ========================================
+   CORES E UTILITÁRIOS
+======================================== */
+
+.bg-terra {
+    background-color: #5C3A21;
+    color: #F6F2EA;
+}
+
+.text-terra {
+    color: #5C3A21;
+}
+
+
+/* ========================================
+   BARRA DE NAVEGAÇÃO
+======================================== */
+
 .menu-links {
-  background-color: #fff;
-  border-bottom: 1px solid #D5C5B3;
+    background-color: #F6F2EA;
+    border-bottom: 1px solid #D5C5B3;
 }
 
-.menu-links .nav-link {
-  color: #5C3A21 !important;
-  font-weight: bold;
-  padding: 15px 20px !important;
-  transition: 0.2s;
+.menu-link,
+.menu-link-direita,
+.menu-dropdown summary,
+.menu-subdropdown summary {
+    color: #5C3A21;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    list-style: none;
+    padding: 15px 20px;
+    transition: 0.2s ease;
 }
 
-.menu-links .nav-link:hover {
-  color: #ffbf00 !important;
+.menu-link:hover,
+.menu-link-direita:hover,
+.menu-dropdown summary:hover,
+.menu-subdropdown summary:hover {
+    background-color: #ffbf00;
+    color: #F6F2EA;
 }
 
-.menu-links .dropdown-menu {
-  background-color: #fff;
-  border: 1px solid #D5C5B3;
-  border-radius: 0;
-  box-shadow: 0 4px 8px rgba(92, 58, 33, 0.12);
+/* Remove indicadores padrão */
+.menu-dropdown summary::-webkit-details-marker,
+.menu-subdropdown summary::-webkit-details-marker {
+    display: none;
 }
 
-.menu-links .dropdown-item {
-  color: #5C3A21 !important;
-  padding: 10px 18px;
+/* Indicador do dropdown */
+.menu-dropdown > summary::after {
+    content: " ▾";
 }
 
-.menu-links .dropdown-item:hover {
-  background-color: #ffbf00;
-  color: #fff !important;
+
+/* ========================================
+   DROPDOWN PRINCIPAL
+======================================== */
+
+.menu-dropdown {
+    position: relative;
 }
 
-/* Submenu de Esporte */
-.dropdown-submenu {
-  position: relative;
+.menu-dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 210px;
+    background-color: #F6F2EA;
+    border: 1px solid #D5C5B3;
+    z-index: 1000;
 }
 
-.dropdown-submenu > .dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-top: -1px;
-  display: none;
+.menu-dropdown-content > a,
+.menu-subcontent > a {
+    display: block;
+    padding: 11px 16px;
+    color: #5C3A21;
+    text-decoration: none;
+    transition: 0.2s ease;
 }
 
-.dropdown-submenu.show > .dropdown-menu {
-  display: block;
+.menu-dropdown-content > a:hover,
+.menu-subcontent > a:hover {
+    background-color: #ffbf00;
+    color: #F6F2EA;
 }
 
-/* Botão do submenu */
-.submenu-toggle {
-  width: 100%;
-  text-align: left;
-  background: none;
-  border: none;
+
+/* ========================================
+   SUBMENU DE ESPORTE
+======================================== */
+
+.menu-subdropdown {
+    position: relative;
+}
+
+.menu-subdropdown > summary span {
+    float: right;
+}
+
+.menu-subcontent {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    min-width: 170px;
+    background-color: #F6F2EA;
+    border: 1px solid #D5C5B3;
+    z-index: 1001;
+}
+
+
+/* ========================================
+   BOTÕES
+======================================== */
+
+.btn-turquesa,
+.btn-outline-dark {
+    background-color: #ffbf00;
+    color: #fff;
+    border: 1px solid #D5C5B3;
+    transition: 0.2s ease;
+}
+
+.btn-turquesa:hover,
+.btn-outline-dark:hover {
+    background-color: #5C3A21;
+    color: #D5C5B3;
+    border-color: #D5C5B3;
+}
+
+
+/* ========================================
+   CARDS E PUBLICAÇÕES
+======================================== */
+
+.card-custom,
+.box-post {
+    background-color: #FFFDF9;
+    border: 2px solid #D5C5B3;
+}
+
+.card-custom {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-custom:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 15px rgba(92, 58, 33, 0.12);
+}
+
+
+/* ========================================
+   CONTEÚDO DE TEXTO
+======================================== */
+
+.conteudo-texto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+/* Tablets e celulares */
+@media (max-width: 991px) {
+    .menu-link,
+    .menu-link-direita,
+    .menu-dropdown summary,
+    .menu-subdropdown summary {
+        padding: 12px;
+    }
 }
 
 /* Celulares */
-@media (max-width: 991px) {
-  .dropdown-submenu > .dropdown-menu {
-    position: static;
-    margin-left: 15px;
-    box-shadow: none;
-    border: none;
-  }
+@media (max-width: 600px) {
+    .menu-links .container {
+        flex-direction: column;
+        align-items: stretch !important;
+    }
 
-  .menu-links .nav-link {
-    padding: 12px !important;
-  }
-}
-
-/* Dropdown principal */
-.menu-links .dropdown-menu {
-  display: none;
-  background-color: #fff;
-  border: 1px solid #D5C5B3;
-  border-radius: 0;
-}
-
-.menu-links .dropdown-menu.show {
-  display: block;
-}
-
-.menu-links .nav-link {
-  color: #5C3A21 !important;
-  font-weight: bold;
-  padding: 15px 20px !important;
-}
-
-.menu-links .nav-link:hover {
-  color: #ffbf00 !important;
-}
-
-.menu-links .dropdown-item {
-  color: #5C3A21 !important;
-  padding: 10px 18px;
-}
-
-.menu-links .dropdown-item:hover {
-  background-color: #ffbf00;
-  color: #fff !important;
-}
-
-/* Submenu */
-.dropdown-submenu {
-  position: relative;
-}
-
-.dropdown-submenu .dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 100%;
-  margin: 0;
-}
-
-.dropdown-submenu.show > .dropdown-menu {
-  display: block;
-}
-
-@media (max-width: 991px) {
-  .dropdown-submenu .dropdown-menu {
-    position: static;
-    margin-left: 15px;
-  }
+    .menu-dropdown-content,
+    .menu-subcontent {
+        position: static;
+        box-shadow: none;
+        border: none;
+        padding-left: 15px;
+    }
 }

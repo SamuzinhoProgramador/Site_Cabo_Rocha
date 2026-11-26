@@ -1,4 +1,4 @@
-baseURL = "https://caborocha.org.br/" #substituir depois
+baseURL = "https://site-cabo-rocha.netlify.net/" #substituir depois
 locale = "pt-br"
 title = "Cabo Rocha"
 
