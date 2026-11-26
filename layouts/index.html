@@ -9,12 +9,158 @@
   <link rel="stylesheet" href="css/css.css">
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <style>
-    body { background-color: #F6F2EA; color: #ffbf00; }
-    .bg-terra { background-color: #5C3A21; color: #F6F2EA; }
-    .text-terra { color: #5C3A21; }
-    .btn-turquesa { background-color: #ffbf00; color: #fff; border: none; }
-    .btn-turquesa:hover { background-color: #ffbf00; color: #fff; }
-    .card-custom { background-color: #fff; border: 2px solid #D5C5B3; }
+    body {
+  background-color: #F6F2EA;
+  color: #5C3A21;
+}
+
+/* Cores principais */
+.bg-terra {
+  background-color: #5C3A21;
+  color: #F6F2EA;
+}
+
+.text-terra {
+  color: #5C3A21;
+}
+
+/* Botões */
+.btn-turquesa {
+  background-color: #F6F2EA;
+  color: #5C3A21;
+  border: 1px solid #5C3A21;
+  transition: 0.2s ease;
+}
+
+.btn-turquesa:hover {
+  background-color: #ffbf00;
+  color: #F6F2EA;
+  border-color: #ffbf00;
+}
+
+/* Botão Quero Doar */
+.btn-outline-dark {
+  background-color: #F6F2EA;
+  color: #5C3A21 !important;
+  border: 1px solid #5C3A21;
+  transition: 0.2s ease;
+}
+
+.btn-outline-dark:hover {
+  background-color: #ffbf00;
+  color: #F6F2EA !important;
+  border-color: #ffbf00;
+}
+
+/* Barra de navegação */
+.menu-links {
+  background-color: #F6F2EA;
+  border-bottom: 1px solid #D5C5B3;
+}
+
+.menu-link,
+.menu-dropdown summary,
+.menu-subdropdown summary {
+  color: #5C3A21;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  list-style: none;
+  padding: 15px 20px;
+  transition: 0.2s ease;
+}
+
+.menu-link:hover,
+.menu-dropdown summary:hover,
+.menu-subdropdown summary:hover {
+  background-color: #ffbf00;
+  color: #F6F2EA;
+}
+
+/* Dropdown */
+.menu-dropdown {
+  position: relative;
+}
+
+.menu-dropdown summary::-webkit-details-marker,
+.menu-subdropdown summary::-webkit-details-marker {
+  display: none;
+}
+
+.menu-dropdown > summary::after {
+  content: " ▾";
+}
+
+.menu-dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 210px;
+  background-color: #F6F2EA;
+  border: 1px solid #D5C5B3;
+  z-index: 1000;
+}
+
+.menu-dropdown-content > a,
+.menu-subcontent > a {
+  display: block;
+  padding: 11px 16px;
+  color: #5C3A21;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.menu-dropdown-content > a:hover,
+.menu-subcontent > a:hover {
+  background-color: #ffbf00;
+  color: #F6F2EA;
+}
+
+/* Submenu Esporte */
+.menu-subdropdown {
+  position: relative;
+}
+
+.menu-subdropdown > summary span {
+  float: right;
+}
+
+.menu-subcontent {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  min-width: 170px;
+  background-color: #F6F2EA;
+  border: 1px solid #D5C5B3;
+  z-index: 1001;
+}
+
+.card-custom {
+  background-color: #fff;
+  border: 2px solid #D5C5B3;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-custom:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 5px 15px rgba(92, 58, 33, 0.12);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .menu-links .container {
+    flex-direction: column;
+    align-items: stretch !important;
+  }
+
+  .menu-dropdown-content,
+  .menu-subcontent {
+    position: static;
+    box-shadow: none;
+    border: none;
+    padding-left: 15px;
+  }
+}
   </style>
 </head>
 <body>
@@ -67,15 +213,15 @@
   </div>
 </nav>
 
-  <header class="bg-terra py-5 text-center">
-    <div class="container py-3">
-      <h1 class="display-5 fw-bold">Comunidade em Ação</h1>
-      <p class="lead mx-auto mt-3" style="max-width: 650px;">
-        Promovendo agroecologia urbana, fortalecimento comunitário e cidadania na Comunidade Cabo Rocha.
-      </p>
-      <a href="/posts/" class="btn btn-turquesa btn-lg mt-2 fw-bold px-4">Conheça nossas ações</a>
-    </div>
-  </header>
+<header class="bg-terra py-5 text-center">
+  <div class="container py-3">
+    <h1 class="display-5 fw-bold">Comunidade em Ação</h1>
+
+    <p class="lead mx-auto mt-3" style="max-width: 650px;">
+      Promovendo agroecologia urbana, fortalecimento comunitário e cidadania na Comunidade Cabo Rocha.
+    </p>
+  </div>
+</header>
 
   <main class="container my-5">
     <h2 class="fw-bold text-terra mb-4">Últimas Atualizações</h2>
