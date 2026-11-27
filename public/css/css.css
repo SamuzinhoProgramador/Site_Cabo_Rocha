@@ -219,3 +219,11 @@ main {
         padding-left: 15px;
     }
 }
+
+.menu-links .container {
+    justify-content: flex-start;
+}
+
+.menu-link-direita {
+    margin-left: auto;
+}
