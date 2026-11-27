@@ -3,9 +3,78 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/x-icon" href="/img/favicon.png">
   <title>Painel Administrativo - ACBR</title>
+  
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+  <style>
+    /* ========================================
+       ESTILIZAÇÃO DO PAINEL ADMIN (DECAP CMS)
+    ======================================== */
+
+    :root {
+      --bg-principal: #F6F2EA;
+      --cor-texto: #2B2118;
+      --cor-terra: #5C3A21;
+      --cor-destaque: #ffbf00;
+      --borda-suave: #D5C5B3;
+      --card-bg: #FFFDF9;
+    }
+
+    body {
+      background-color: var(--bg-principal) !important;
+      color: var(--cor-texto) !important;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+    }
+
+    header[class*="AppHeader"] {
+      background-color: var(--cor-terra) !important;
+      border-bottom: 2px solid var(--borda-suave) !important;
+    }
+
+    header[class*="AppHeader"] span,
+    header[class*="AppHeader"] a {
+      color: var(--bg-principal) !important;
+    }
+
+    button[class*="PublishButton"],
+    a[class*="CollectionTopNewButton"],
+    button[class*="Button"][style*="background-color"] {
+      background-color: var(--cor-terra) !important;
+      color: var(--bg-principal) !important;
+      border: 1px solid var(--borda-suave) !important;
+      border-radius: 6px !important;
+      transition: 0.2s ease;
+    }
+
+    button[class*="PublishButton"]:hover,
+    a[class*="CollectionTopNewButton"]:hover {
+      background-color: var(--cor-destaque) !important;
+      color: var(--cor-terra) !important;
+    }
+
+    div[class*="CollectionContainer"],
+    div[class*="Card"] {
+      background-color: var(--card-bg) !important;
+      border: 1px solid var(--borda-suave) !important;
+      border-radius: 8px;
+    }
+
+    div[class*="LoginContainer"] {
+      background-color: var(--bg-principal) !important;
+    }
+
+    button[class*="LoginButton"] {
+      background-color: var(--cor-terra) !important;
+      color: var(--bg-principal) !important;
+      border-radius: 6px !important;
+    }
+
+    button[class*="LoginButton"]:hover {
+      background-color: var(--cor-destaque) !important;
+      color: var(--cor-terra) !important;
+    }
+  </style>
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
