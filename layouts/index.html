@@ -69,7 +69,13 @@
 </header>
 
   <main class="container my-5">
-    <h2 class="fw-bold text-terra mb-4">Últimas Atualizações</h2>
+    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+      <h2 class="fw-bold text-terra mb-0">Últimas Atualizações</h2>
+
+      <a href="/posts/" class="btn btn-turquesa btn-sm fw-bold">
+        Ver todas as publicações
+      </a>
+    </div>
     <div class="row g-4">
       {{ range first 3 (where .Site.RegularPages "Section" "posts") }}
       <div class="col-md-4">
